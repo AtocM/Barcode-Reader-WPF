@@ -166,12 +166,43 @@ namespace Barcode_Reader
 
 
             newuserImage.MouseUp += newuserImage_MouseUp;
+            findProdutImage.MouseUp += findProdutImage_MouseUp;
+            iadeImage.MouseUp += iadeImage_MouseUp;
+            settingToolsImage.MouseUp += settingToolsImage_MouseUp;
 
            
 
 
 
         }
+
+        void settingToolsImage_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            Canvas containerCanvas = new Canvas();
+            containerCanvas = headerMenuClick();
+
+            Canvas mainCanvas = (Canvas)containerCanvas.Children[1];
+
+        }
+
+        void iadeImage_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            Canvas containerCanvas = new Canvas();
+            containerCanvas = headerMenuClick();
+
+            Canvas mainCanvas = (Canvas)containerCanvas.Children[1];
+
+        }
+
+        void findProdutImage_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            Canvas containerCanvas = new Canvas();
+            containerCanvas = headerMenuClick();
+
+            Canvas mainCanvas = (Canvas)containerCanvas.Children[1];
+
+        }
+
 
         void mainWindow_KeyUp(object sender, KeyEventArgs e)
         {
@@ -216,12 +247,12 @@ namespace Barcode_Reader
 
                     if(innerItemsBackground == true)
                     {
-                        innerStackPanel.Background = new SolidColorBrush(Color.FromArgb(125, 55, 55, 55));
+                        innerStackPanel.Background = new SolidColorBrush(Color.FromArgb(35, 4, 140, 238));
                         innerItemsBackground = false;
                     }
                     else
                     {
-                        innerStackPanel.Background = new SolidColorBrush(Color.FromArgb(255, 55, 55, 55));
+                        innerStackPanel.Background = new SolidColorBrush(Color.FromArgb(7, 4,140,238));
                         innerItemsBackground = true;
                     }
 
@@ -278,7 +309,11 @@ namespace Barcode_Reader
                     setWidthAndHeight(birimFiyatText, 160, 50);
                     setWidthAndHeight(toplamFiyatText, 125, 50);
 
-                    setTopLeftPosition(urunText, 42, 0);
+                    setTopLeftPosition(urunText, 42, 13);
+                    setTopLeftPosition(kdvText, 0, 13);
+                    setTopLeftPosition(miktarText, 0, 13);
+                    setTopLeftPosition(birimFiyatText, 0, 13);
+                    setTopLeftPosition(toplamFiyatText, 0, 13);
                     innerStackPanel.Children.Add(urunText);
                     innerStackPanel.Children.Add(kdvText);
                     innerStackPanel.Children.Add(miktarText);
@@ -368,6 +403,7 @@ namespace Barcode_Reader
             baseGrid.Children.Add(exitImage);
             baseGrid.Children.Add(toggleImage);
             baseGrid.Children.Add(stackPanelForUserTabs);
+
 
             stackPanelForUserTabs.Orientation = Orientation.Horizontal;
             stackPanelForUserTabs.Children.Clear();
@@ -1135,8 +1171,10 @@ namespace Barcode_Reader
             Canvas centerCanvas = new Canvas();
             Canvas backgroundCanvas = new Canvas();
             Canvas mainCanvas = (Canvas)canvas;
+            Canvas totalCanvas = new Canvas();
 
             Border totalBorder = new Border();
+
 
 
             //Bitmaps
@@ -1156,6 +1194,9 @@ namespace Barcode_Reader
             Label headerText = new Label();
             Label totalTextHeader = new Label();
             Label totalTextTL = new Label();
+            Label totalTextEuro = new Label();
+            Label totalTextDolar = new Label();
+            Label totalTextPound = new Label();
 
 
 
@@ -1203,17 +1244,37 @@ namespace Barcode_Reader
             totalTextTL.FontSize = 28 * ratioW;
             totalTextTL.HorizontalContentAlignment = HorizontalAlignment.Right;
 
+            totalTextPound.Content = "30,87";
+            totalTextPound.Foreground = new SolidColorBrush(Color.FromArgb(255, 104, 183, 255));
+            totalTextPound.FontWeight = FontWeights.Bold;
+            totalTextPound.FontSize = 18 * ratioW;
+            totalTextPound.HorizontalContentAlignment = HorizontalAlignment.Right;
+
+            totalTextEuro.Content = "30,87";
+            totalTextEuro.Foreground = new SolidColorBrush(Color.FromArgb(255, 104, 183, 255));
+            totalTextEuro.FontWeight = FontWeights.Bold;
+            totalTextEuro.FontSize = 18 * ratioW;
+            totalTextEuro.HorizontalContentAlignment = HorizontalAlignment.Right;
+
+            totalTextDolar.Content = "30,87";
+            totalTextDolar.Foreground = new SolidColorBrush(Color.FromArgb(255, 104, 183, 255));
+            totalTextDolar.FontWeight = FontWeights.Bold;
+            totalTextDolar.FontSize = 18 * ratioW;
+            totalTextDolar.HorizontalContentAlignment = HorizontalAlignment.Right;
+
             centerCanvas.Children.Add(backgroundImage);
             centerCanvas.Children.Add(headerIconImage);
             centerCanvas.Children.Add(headerText);
             centerCanvas.Children.Add(totalBorder);
             centerCanvas.Children.Add(totalTextHeader);
             centerCanvas.Children.Add(totalTextTL);
+            centerCanvas.Children.Add(totalTextPound);
+            centerCanvas.Children.Add(totalTextEuro);
+            centerCanvas.Children.Add(totalTextDolar);
             centerCanvas.Children.Add(tlIcon);
             centerCanvas.Children.Add(euroIcon);
             centerCanvas.Children.Add(dollarIcon);
             centerCanvas.Children.Add(poundIcon);
-
 
 
 
@@ -1222,10 +1283,13 @@ namespace Barcode_Reader
             setWidthAndHeight(containerCanvas, 1920, 1080);
             setWidthAndHeight(backgroundImage, 870, 490);
             setWidthAndHeight(totalTextTL, 200, 50);
+            setWidthAndHeight(totalTextPound, 125, 50);
+            setWidthAndHeight(totalTextEuro, 125, 50);
+            setWidthAndHeight(totalTextDolar, 125, 50);
             setWidthAndHeight(tlIcon, 35, 35);
-            setWidthAndHeight(euroIcon, 35, 35);
-            setWidthAndHeight(dollarIcon, 35, 35);
-            setWidthAndHeight(poundIcon, 35, 35);
+            setWidthAndHeight(euroIcon, 20, 20);
+            setWidthAndHeight(dollarIcon, 20, 20);
+            setWidthAndHeight(poundIcon, 20, 20);
             setWidthAndHeight(backgroundCanvas, 1920, 1080);
 
             setTopLeftPosition(centerCanvas, (1920-870)/2, (1080 - 500) / 2);
@@ -1234,7 +1298,13 @@ namespace Barcode_Reader
             setTopLeftPosition(headerText, 150, 25);
             setTopLeftPosition(totalTextHeader, 50, 110);
             setTopLeftPosition(totalTextTL, 200, 105);
-            setTopLeftPosition(tlIcon, 410, 105);
+            setTopLeftPosition(totalTextPound, 0, 150);
+            setTopLeftPosition(totalTextEuro, 150, 150);
+            setTopLeftPosition(totalTextDolar, 300, 150);
+            setTopLeftPosition(tlIcon, 410,110);
+            setTopLeftPosition(poundIcon, 125, 158);
+            setTopLeftPosition(euroIcon, 280, 158);
+            setTopLeftPosition(dollarIcon, 425, 158);
 
             backgroundCanvas.MouseUp += backGroundCanvas_MouseUp;
 

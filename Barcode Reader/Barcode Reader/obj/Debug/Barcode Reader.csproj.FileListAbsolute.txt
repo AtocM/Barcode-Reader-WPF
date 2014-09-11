@@ -13,3 +13,18 @@ C:\Users\Aykut\Dropbox\Barcode Reader\Barcode Reader\Barcode Reader\obj\Debug\Ba
 C:\Users\Aykut\Dropbox\Barcode Reader\Barcode Reader\Barcode Reader\obj\Debug\Barcode Reader.pdb
 C:\Users\Aykut\Dropbox\Barcode Reader\Barcode Reader\Barcode Reader\obj\Debug\mainWindow.baml
 C:\Users\Aykut\Dropbox\Barcode Reader\Barcode Reader\Barcode Reader\obj\Debug\mainWindow.g.cs
+C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\bin\Debug\Barcode Reader.exe.config
+C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Debug\Barcode Reader.exe
+C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Debug\Barcode Reader.pdb
+C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\bin\Debug\Barcode Reader.exe
+C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\bin\Debug\Barcode Reader.pdb
+C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Debug\Barcode Reader.csprojResolveAssemblyReference.cache
+C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Debug\loginWindow.baml
+C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Debug\mainWindow.baml
+C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Debug\loginWindow.g.cs
+C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Debug\mainWindow.g.cs
+C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Debug\App.g.cs
+C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Debug\Barcode Reader_MarkupCompile.cache
+C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Debug\Barcode Reader.g.resources
+C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Debug\Barcode_Reader.Properties.Resources.resources
+C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Debug\Barcode Reader.csproj.GenerateResource.Cache
