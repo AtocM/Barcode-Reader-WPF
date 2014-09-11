@@ -66,7 +66,6 @@ namespace Barcode_Reader
         {
             InitializeComponent();
 
-
             this.SizeChanged += MainWindow_SizeChanged;
             this.ResizeMode = ResizeMode.NoResize;
             this.WindowState = WindowState.Maximized;
