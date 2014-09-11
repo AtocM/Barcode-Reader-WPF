@@ -66,6 +66,7 @@ namespace Barcode_Reader
         {
             InitializeComponent();
 
+            MessageBox.Show("Deneme2");
 
 
             this.SizeChanged += MainWindow_SizeChanged;

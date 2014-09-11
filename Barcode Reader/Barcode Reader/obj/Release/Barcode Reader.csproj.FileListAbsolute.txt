@@ -15,6 +15,7 @@ C:\Users\Aykut\Dropbox\Barcode Reader\Barcode Reader\Barcode Reader\obj\Release\
 C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\bin\Release\Barcode Reader.exe.config
 C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\Barcode Reader.exe
 C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\Barcode Reader.pdb
+<<<<<<< HEAD
 C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\bin\Release\Barcode Reader.exe
 C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\bin\Release\Barcode Reader.pdb
 C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\Barcode Reader.csprojResolveAssemblyReference.cache
@@ -27,3 +28,8 @@ C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode 
 C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\Barcode Reader.g.resources
 C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\Barcode_Reader.Properties.Resources.resources
 C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\Barcode Reader.csproj.GenerateResource.Cache
+=======
+C:\Users\Murat\Desktop\Dropbox\Persons\Aykut\WPFBarcodeGitHubClone\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\bin\Release\Barcode Reader.exe.config
+C:\Users\Murat\Desktop\Dropbox\Persons\Aykut\WPFBarcodeGitHubClone\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\Barcode Reader.exe
+C:\Users\Murat\Desktop\Dropbox\Persons\Aykut\WPFBarcodeGitHubClone\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\Barcode Reader.pdb
+>>>>>>> origin/master
