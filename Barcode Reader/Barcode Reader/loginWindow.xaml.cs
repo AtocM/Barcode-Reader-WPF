@@ -66,7 +66,7 @@ namespace Barcode_Reader
         {
             InitializeComponent();
 
-            MessageBox.Show("Test");
+
 
             this.SizeChanged += MainWindow_SizeChanged;
             this.ResizeMode = ResizeMode.NoResize;
