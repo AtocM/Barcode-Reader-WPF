@@ -15,3 +15,18 @@ C:\Users\Aykut\Dropbox\Barcode Reader\Barcode Reader\Barcode Reader\obj\Release\
 C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\bin\Release\Barcode Reader.exe.config
 C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\Barcode Reader.exe
 C:\Users\Aykut\Dropbox\Barcode Reader\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\Barcode Reader.pdb
+C:\Users\Murat\Desktop\Dropbox\Persons\Aykut\WPFBarcodeGitHubClone\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\bin\Release\Barcode Reader.exe.config
+C:\Users\Murat\Desktop\Dropbox\Persons\Aykut\WPFBarcodeGitHubClone\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\Barcode Reader.exe
+C:\Users\Murat\Desktop\Dropbox\Persons\Aykut\WPFBarcodeGitHubClone\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\Barcode Reader.pdb
+C:\Users\Murat\Desktop\Dropbox\Persons\Aykut\WPFBarcodeGitHubClone\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\bin\Release\Barcode Reader.exe
+C:\Users\Murat\Desktop\Dropbox\Persons\Aykut\WPFBarcodeGitHubClone\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\bin\Release\Barcode Reader.pdb
+C:\Users\Murat\Desktop\Dropbox\Persons\Aykut\WPFBarcodeGitHubClone\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\Barcode Reader.csprojResolveAssemblyReference.cache
+C:\Users\Murat\Desktop\Dropbox\Persons\Aykut\WPFBarcodeGitHubClone\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\loginWindow.baml
+C:\Users\Murat\Desktop\Dropbox\Persons\Aykut\WPFBarcodeGitHubClone\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\mainWindow.baml
+C:\Users\Murat\Desktop\Dropbox\Persons\Aykut\WPFBarcodeGitHubClone\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\loginWindow.g.cs
+C:\Users\Murat\Desktop\Dropbox\Persons\Aykut\WPFBarcodeGitHubClone\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\mainWindow.g.cs
+C:\Users\Murat\Desktop\Dropbox\Persons\Aykut\WPFBarcodeGitHubClone\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\App.g.cs
+C:\Users\Murat\Desktop\Dropbox\Persons\Aykut\WPFBarcodeGitHubClone\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\Barcode Reader_MarkupCompile.cache
+C:\Users\Murat\Desktop\Dropbox\Persons\Aykut\WPFBarcodeGitHubClone\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\Barcode Reader.g.resources
+C:\Users\Murat\Desktop\Dropbox\Persons\Aykut\WPFBarcodeGitHubClone\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\Barcode_Reader.Properties.Resources.resources
+C:\Users\Murat\Desktop\Dropbox\Persons\Aykut\WPFBarcodeGitHubClone\Barcode-Reader-WPF\Barcode Reader\Barcode Reader\obj\Release\Barcode Reader.csproj.GenerateResource.Cache
