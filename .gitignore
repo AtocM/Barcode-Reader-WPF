@@ -37,7 +37,7 @@ Icon
 .Trashes
 
 
-bin/
-image/
-obj/
-Properties/
+Barcode Reader/Barcode Reader/bin/
+Barcode Reader/Barcode Reader/image/
+Barcode Reader/Barcode Reader/obj/
+Barcode Reader/Barcode Reader/Properties/
