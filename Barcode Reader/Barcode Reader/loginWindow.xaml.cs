@@ -56,10 +56,10 @@ namespace Barcode_Reader
         BitmapImage contentSubmitButtonBitmapImage = new BitmapImage();
         BitmapImage contentExitButtonBitmapImage = new BitmapImage();
 
-        SqlConnection sql = new SqlConnection();
+//        SqlConnection sql = new SqlConnection();
 
         //Class tanımları
-        sqlString sqlStringClass = new sqlString();
+//        sqlString sqlStringClass = new sqlString();
         login loginClass = new login();
 
         public MainWindow()
@@ -189,11 +189,11 @@ namespace Barcode_Reader
             contentExitButtonText.FontWeight = FontWeights.Thin;
 
 
-            sql = sqlStringClass.sqlConnectionOpen();
-            if (sql.State.ToString() == "Closed")
-            {
-                this.Close();
-            }
+//            sql = sqlStringClass.sqlConnectionOpen();
+//            if (sql.State.ToString() == "Closed")
+//            {
+//               this.Close();
+//            }
 
 
         }

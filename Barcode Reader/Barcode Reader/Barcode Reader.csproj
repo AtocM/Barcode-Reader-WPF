@@ -198,6 +198,34 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\mainForm\popupWindow\bg-currency-active.png" />
+    <Resource Include="image\mainForm\popupWindow\bg-currency.png" />
+    <Resource Include="image\mainForm\popupWindow\bg-horizontal-key.png" />
+    <Resource Include="image\mainForm\popupWindow\bg-key.png" />
+    <Resource Include="image\mainForm\popupWindow\bg-keypad.png" />
+    <Resource Include="image\mainForm\popupWindow\bg-vertical-key.png" />
+    <Resource Include="image\mainForm\popupWindow\icon-tl.png" />
+    <Resource Include="image\mainForm\popupWindow\key-0.png" />
+    <Resource Include="image\mainForm\popupWindow\key-1.png" />
+    <Resource Include="image\mainForm\popupWindow\key-2.png" />
+    <Resource Include="image\mainForm\popupWindow\key-3.png" />
+    <Resource Include="image\mainForm\popupWindow\key-4.png" />
+    <Resource Include="image\mainForm\popupWindow\key-5.png" />
+    <Resource Include="image\mainForm\popupWindow\key-6.png" />
+    <Resource Include="image\mainForm\popupWindow\key-7.png" />
+    <Resource Include="image\mainForm\popupWindow\key-8.png" />
+    <Resource Include="image\mainForm\popupWindow\key-9.png" />
+    <Resource Include="image\mainForm\popupWindow\key-backspace.png" />
+    <Resource Include="image\mainForm\popupWindow\key-clear.png" />
+    <Resource Include="image\mainForm\popupWindow\key-comma.png" />
+    <Resource Include="image\mainForm\popupWindow\separator-horizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\mainForm\popupWindow\icon-dollar.png" />
+    <Resource Include="image\mainForm\popupWindow\icon-euro.png" />
+    <Resource Include="image\mainForm\popupWindow\icon-pound.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -32,7 +32,7 @@ namespace Barcode_Reader
         static Image dollarIconImage= new Image();
         static Image poundIconImage= new Image();
 
-        SqlConnection sqlConnection = new SqlConnection();
+//        SqlConnection sqlConnection = new SqlConnection();
         ArrayList callProductArrayList = new ArrayList();
         ArrayList kurlar = new ArrayList();
         
@@ -41,7 +41,7 @@ namespace Barcode_Reader
 
 
         //Classlar
-        sqlString sqlStringClass = new sqlString();
+//        sqlString sqlStringClass = new sqlString();
         callProductFromDatabase classCallProduct = new callProductFromDatabase();
 
         bool justOneCreateTab = true;
@@ -210,10 +210,10 @@ namespace Barcode_Reader
             {
                 callProductArrayList.Clear();
 
-                sqlConnection = sqlStringClass.sqlConnectionOpen();
-                callProductArrayList = classCallProduct.callSelectedItem(okutulanBarkod,sqlConnection);
+//                sqlConnection = sqlStringClass.sqlConnectionOpen();
+//                callProductArrayList = classCallProduct.callSelectedItem(okutulanBarkod,sqlConnection);
 
-                kurlar = classCallProduct.kurlar(sqlConnection);
+//                kurlar = classCallProduct.kurlar(sqlConnection);
 
 
                 Border containerBorder = (Border)midItemsArrayList[acikOlanPencere];
@@ -885,8 +885,8 @@ namespace Barcode_Reader
 
         void paymentCashImage_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            SqlConnection sqlconn = new SqlConnection();
-            sqlconn = sqlStringClass.sqlConnectionOpen();
+//            SqlConnection sqlconn = new SqlConnection();
+//            sqlconn = sqlStringClass.sqlConnectionOpen();
             Border border = (Border)midItemsArrayList[acikOlanPencere];
             Canvas canvas = (Canvas)border.Child;
             Canvas footerBorder = (Canvas)footerItemsArrayList[acikOlanPencere];
@@ -1047,6 +1047,12 @@ namespace Barcode_Reader
                 Label label = (Label)sender;
                 label.Margin = new Thickness(x, y, 0, 0);
             }
+            else if (sender.GetType().Name == "TextBlock")
+            {
+                UIElement sentElement = (UIElement)sender;
+                Canvas.SetTop(sentElement, y);
+                Canvas.SetLeft(sentElement, x);
+            }
             else if (sender.GetType().Name == "TextBox")
             {
                 double paddingTop = 0 * ratioH;
@@ -1116,6 +1122,13 @@ namespace Barcode_Reader
                 textbox.Width = width * ratioW;
                 textbox.Height = height * ratioH;
             }
+            else if (sender.GetType().Name == "TextBlock")
+            {
+                TextBlock textbox = new TextBlock();
+                textbox = (TextBlock)sender;
+                textbox.Width = width * ratioW;
+                textbox.Height = height * ratioH;
+            }
             else if (sender.GetType().Name == "PasswordBox")
             {
                 PasswordBox passwordBox = new PasswordBox();
@@ -1162,25 +1175,78 @@ namespace Barcode_Reader
             nowDate += DateTime.Now.TimeOfDay;
             return nowDate;
         }
+
+        public void createBitmap(BitmapImage bitmapVariable, String pathString)
+        {
+            bitmapVariable.BeginInit();
+            bitmapVariable.UriSource = new Uri("pack://application:,,,/Barcode Reader;component/image/" + pathString);
+            bitmapVariable.EndInit();
+        }
+
         public Canvas createPopUpWindow(Canvas canvas)
         {
             Canvas containerCanvas = new Canvas();
-
-
-
             Canvas centerCanvas = new Canvas();
             Canvas backgroundCanvas = new Canvas();
             Canvas mainCanvas = (Canvas)canvas;
-            Canvas totalCanvas = new Canvas();
+            Canvas paymentReceivedCanvas = new Canvas();
+            Canvas paymentBottomLeftCanvas = new Canvas();
+            Canvas paymentBottomRightCanvas = new Canvas();
 
             Border totalBorder = new Border();
-
-
 
             //Bitmaps
             BitmapImage backgroundBitmap = new BitmapImage();
             BitmapImage headerIconBitmap = new BitmapImage();
+            BitmapImage dollarIconBitmap = new BitmapImage();
+            BitmapImage euroIconBitmap = new BitmapImage();
+            BitmapImage poundIconBitmap = new BitmapImage();
+            BitmapImage keypadBackgroundBitmap = new BitmapImage();
+            BitmapImage keyBackgroundBitmap = new BitmapImage();
+            BitmapImage keyVerticalBackgroundBitmap = new BitmapImage();
+            BitmapImage keyHorizontalBackgroundBitmap = new BitmapImage();
+            BitmapImage currencyBackgroundBitmap = new BitmapImage();
+            BitmapImage currencyActiveBitmap = new BitmapImage();
+            BitmapImage separatorBitmap = new BitmapImage();
+            BitmapImage keyZeroBitmap = new BitmapImage();
+            BitmapImage keyOneBitmap = new BitmapImage();
+            BitmapImage keyTwoBitmap = new BitmapImage();
+            BitmapImage keyThreeBitmap = new BitmapImage();
+            BitmapImage keyFourBitmap = new BitmapImage();
+            BitmapImage keyFiveBitmap = new BitmapImage();
+            BitmapImage keySixBitmap = new BitmapImage();
+            BitmapImage keySevenBitmap = new BitmapImage();
+            BitmapImage keyEightBitmap = new BitmapImage();
+            BitmapImage keyNineBitmap = new BitmapImage();
+            BitmapImage keyBackspaceBitmap = new BitmapImage();
+            BitmapImage keyClearBitmap = new BitmapImage();
+            BitmapImage keyCommaBitmap = new BitmapImage();
 
+            createBitmap(backgroundBitmap, "mainForm/popupWindow/little-bg-pop-up.png");
+            createBitmap(headerIconBitmap, "mainForm/popupWindow/icon-little-cash.png");
+            createBitmap(dollarIconBitmap, "mainForm/popupWindow/icon-dollar.png");
+            createBitmap(euroIconBitmap, "mainForm/popupWindow/icon-euro.png");
+            createBitmap(poundIconBitmap, "mainForm/popupWindow/icon-pound.png");
+            createBitmap(keypadBackgroundBitmap, "mainForm/popupWindow/bg-keypad.png");
+            createBitmap(keyBackgroundBitmap, "mainForm/popupWindow/bg-key.png");
+            createBitmap(keyVerticalBackgroundBitmap, "mainForm/popupWindow/bg-vertical-key.png");
+            createBitmap(keyHorizontalBackgroundBitmap, "mainForm/popupWindow/bg-horizontal-key.png");
+            createBitmap(currencyBackgroundBitmap, "mainForm/popupWindow/bg-currency.png");
+            createBitmap(currencyActiveBitmap, "mainForm/popupWindow/bg-currency-active.png");
+            createBitmap(separatorBitmap, "mainForm/popupWindow/separator-horizontal.png");
+            createBitmap(keyZeroBitmap, "mainForm/popupWindow/key-0.png");
+            createBitmap(keyOneBitmap, "mainForm/popupWindow/key-1.png");
+            createBitmap(keyTwoBitmap, "mainForm/popupWindow/key-2.png");
+            createBitmap(keyThreeBitmap, "mainForm/popupWindow/key-3.png");
+            createBitmap(keyFourBitmap, "mainForm/popupWindow/key-4.png");
+            createBitmap(keyFiveBitmap, "mainForm/popupWindow/key-5.png");
+            createBitmap(keySixBitmap, "mainForm/popupWindow/key-6.png");
+            createBitmap(keySevenBitmap, "mainForm/popupWindow/key-7.png");
+            createBitmap(keyEightBitmap, "mainForm/popupWindow/key-8.png");
+            createBitmap(keyNineBitmap, "mainForm/popupWindow/key-9.png");
+            createBitmap(keyBackspaceBitmap, "mainForm/popupWindow/key-backspace.png");
+            createBitmap(keyClearBitmap, "mainForm/popupWindow/key-clear.png");
+            createBitmap(keyCommaBitmap, "mainForm/popupWindow/key-comma.png");
 
             //Images
             Image backgroundImage = new Image();
@@ -1189,84 +1255,173 @@ namespace Barcode_Reader
             Image euroIcon = new Image();
             Image dollarIcon = new Image();
             Image poundIcon = new Image();
+            Image keypadBackgroundImage = new Image();
+            Image keyBackgroundImage = new Image();
+            Image keyVerticalBackgroundImage = new Image();
+            Image keyHorizontalBackgroundImage = new Image();
+            Image currencyBackgroundImage = new Image();
+            Image currencyActiveImage = new Image();
+            Image separatorImage = new Image();
+            Image separatorBotImage = new Image();
+            Image keyZero = new Image();
+            Image keyOne = new Image();
+            Image keyTwo = new Image();
+            Image keyThree = new Image();
+            Image keyFour = new Image();
+            Image keyFive = new Image();
+            Image keySix = new Image();
+            Image keySeven = new Image();
+            Image keyEight = new Image();
+            Image keyNine = new Image();
+            Image keyBackspace = new Image();
+            Image keyClear = new Image();
+            Image keyComma = new Image();
 
-            //Label
-            Label headerText = new Label();
-            Label totalTextHeader = new Label();
-            Label totalTextTL = new Label();
-            Label totalTextEuro = new Label();
-            Label totalTextDolar = new Label();
-            Label totalTextPound = new Label();
+            //TextBlock
+            TextBlock headerText = new TextBlock();
+            TextBlock totalTextLabel = new TextBlock();
+            TextBlock totalTextTL = new TextBlock();
+            TextBlock totalTextEuro = new TextBlock();
+            TextBlock totalTextDolar = new TextBlock();
+            TextBlock totalTextPound = new TextBlock();
+            TextBlock currencyTl = new TextBlock();
+            TextBlock currencyDollar = new TextBlock();
+            TextBlock currencyEuro = new TextBlock();
+            TextBlock currencyPound = new TextBlock();
+            TextBlock receivedLabel = new TextBlock();
+            TextBlock remainingTextLabel = new TextBlock();
+            TextBlock remainingLabel = new TextBlock();
+            TextBlock changeTextLabel = new TextBlock();
+            TextBlock paymentChangeLabel = new TextBlock();
 
-
-
-            backgroundBitmap.BeginInit();
-            backgroundBitmap.UriSource = new Uri("pack://application:,,,/Barcode Reader;component/image/mainForm/popupWindow/bg-pop-up.png");
-            backgroundBitmap.EndInit();
-
-            headerIconBitmap.BeginInit();
-            headerIconBitmap.UriSource = new Uri("pack://application:,,,/Barcode Reader;component/image/mainForm/popupWindow/icon-little-cash.png");
-            headerIconBitmap.EndInit();
-
+            //Image Source Setting
             backgroundImage.Source = backgroundBitmap;
             headerIconImage.Source = headerIconBitmap;
+            tlIcon.Source = tlIconImage.Source;
+            euroIcon.Source = euroIconBitmap;
+            dollarIcon.Source = dollarIconBitmap;
+            poundIcon.Source = poundIconBitmap;
+            keypadBackgroundImage.Source = keypadBackgroundBitmap;
+            keyBackgroundImage.Source = keyBackgroundBitmap;
+            keyVerticalBackgroundImage.Source = keyVerticalBackgroundBitmap;
+            keyHorizontalBackgroundImage.Source = keyHorizontalBackgroundBitmap;
+            currencyBackgroundImage.Source = currencyBackgroundBitmap;
+            currencyActiveImage.Source = currencyActiveBitmap;
+            separatorImage.Source = separatorBitmap;
+            separatorBotImage.Source = separatorBitmap;
+            keyZero.Source = keyZeroBitmap;
+            keyOne.Source = keyOneBitmap;
+            keyTwo.Source = keyTwoBitmap;
+            keyThree.Source = keyThreeBitmap;
+            keyFour.Source = keyFourBitmap;
+            keyFive.Source = keyFiveBitmap;
+            keySix.Source = keySixBitmap;
+            keySeven.Source = keySevenBitmap;
+            keyEight.Source = keyEightBitmap;
+            keyNine.Source = keyNineBitmap;
+            keyBackspace.Source = keyBackspaceBitmap;
+            keyClear.Source = keyClearBitmap;
+            keyComma.Source = keyCommaBitmap;
 
             backgroundCanvas.Background = new SolidColorBrush(Color.FromArgb(225, 25, 25, 25));
-
+            paymentReceivedCanvas.Background = new SolidColorBrush(Color.FromArgb(49, 0, 0, 0));
+            paymentBottomLeftCanvas.Background = new SolidColorBrush(Color.FromArgb(39, 0, 0, 0));
+            paymentBottomRightCanvas.Background = new SolidColorBrush(Color.FromArgb(20, 0, 0, 0));
 
             baseGrid.Children.Add(containerCanvas);
             containerCanvas.Children.Add(backgroundCanvas);
             containerCanvas.Children.Add(centerCanvas);
-            
 
             backgroundImage.Stretch = Stretch.Fill;
 
+            ImageBrush currencyActiveBrush = new ImageBrush();
+            currencyActiveBrush.ImageSource = currencyActiveBitmap;
 
-             tlIcon.Source = tlIconImage.Source;
-             euroIcon.Source = euroIconImage.Source;
-             dollarIcon.Source = dollarIconImage.Source;
-             poundIcon.Source = poundIconImage.Source;
-
-            headerText.Content = "NAKİT ÖDEME";
+            headerText.Inlines.Add(new Bold(new Run("NAKİT")));
+            headerText.Inlines.Add(new Run(" ÖDEME"));
             headerText.Foreground = new SolidColorBrush(Color.FromArgb(255, 104, 183, 255));
-            headerText.FontWeight = FontWeights.SemiBold;
             headerText.FontSize = 28 * ratioW;
 
+            totalTextLabel.Text = "TOPLAM TUTAR";
+            totalTextLabel.Foreground = new SolidColorBrush(Color.FromArgb(255, 104, 183, 255));
+            totalTextLabel.FontWeight = FontWeights.SemiBold;
+            totalTextLabel.FontSize = 21 * ratioW;
 
-            totalTextHeader.Content = "TOPLAM TUTAR";
-            totalTextHeader.Foreground = new SolidColorBrush(Color.FromArgb(255, 104, 183, 255));
-            totalTextHeader.FontWeight = FontWeights.SemiBold;
-            totalTextHeader.FontSize = 21 * ratioW;
-
-            totalTextTL.Content = "30,87";
+            totalTextTL.Text = "30,87";
             totalTextTL.Foreground = new SolidColorBrush(Color.FromArgb(255, 104, 183, 255));
             totalTextTL.FontWeight = FontWeights.Bold;
             totalTextTL.FontSize = 28 * ratioW;
-            totalTextTL.HorizontalContentAlignment = HorizontalAlignment.Right;
+            totalTextTL.TextAlignment = TextAlignment.Right;
 
-            totalTextPound.Content = "30,87";
+            totalTextPound.Text = "30,87";
             totalTextPound.Foreground = new SolidColorBrush(Color.FromArgb(255, 104, 183, 255));
-            totalTextPound.FontWeight = FontWeights.Bold;
             totalTextPound.FontSize = 18 * ratioW;
-            totalTextPound.HorizontalContentAlignment = HorizontalAlignment.Right;
+            totalTextPound.TextAlignment = TextAlignment.Right;
 
-            totalTextEuro.Content = "30,87";
+            totalTextEuro.Text = "30,87";
             totalTextEuro.Foreground = new SolidColorBrush(Color.FromArgb(255, 104, 183, 255));
-            totalTextEuro.FontWeight = FontWeights.Bold;
             totalTextEuro.FontSize = 18 * ratioW;
-            totalTextEuro.HorizontalContentAlignment = HorizontalAlignment.Right;
+            totalTextEuro.TextAlignment = TextAlignment.Right;
 
-            totalTextDolar.Content = "30,87";
+            totalTextDolar.Text = "30,87";
             totalTextDolar.Foreground = new SolidColorBrush(Color.FromArgb(255, 104, 183, 255));
-            totalTextDolar.FontWeight = FontWeights.Bold;
             totalTextDolar.FontSize = 18 * ratioW;
-            totalTextDolar.HorizontalContentAlignment = HorizontalAlignment.Right;
+            totalTextDolar.TextAlignment = TextAlignment.Right;
+
+            currencyTl.Text = "TL";
+            currencyTl.Foreground = new SolidColorBrush(Color.FromArgb(255, 192, 188, 188));
+            currencyTl.FontSize = 15 * ratioW;
+            currencyTl.FontWeight = FontWeights.Bold;
+            currencyTl.TextAlignment = TextAlignment.Center;
+            currencyTl.Background = currencyActiveBrush;
+            currencyTl.Padding = new Thickness(0, 16, 0, 0);
+            currencyTl.Cursor = Cursors.Hand;
+
+            currencyDollar.Text = "Dolar";
+            currencyDollar.Foreground = new SolidColorBrush(Color.FromArgb(255, 192, 188, 188));
+            currencyDollar.FontSize = 15 * ratioW;
+            currencyDollar.FontWeight = FontWeights.Bold;
+            currencyDollar.TextAlignment = TextAlignment.Center;
+            currencyDollar.Padding = new Thickness(0, 16, 0, 0);
+            currencyDollar.Cursor = Cursors.Hand;
+
+            currencyEuro.Text = "Euro";
+            currencyEuro.Foreground = new SolidColorBrush(Color.FromArgb(255, 192, 188, 188));
+            currencyEuro.FontSize = 15 * ratioW;
+            currencyEuro.FontWeight = FontWeights.Bold;
+            currencyEuro.TextAlignment = TextAlignment.Center;
+            currencyEuro.Padding = new Thickness(0, 16, 0, 0);
+            currencyEuro.Cursor = Cursors.Hand;
+
+            currencyPound.Text = "Pound";
+            currencyPound.Foreground = new SolidColorBrush(Color.FromArgb(255, 192, 188, 188));
+            currencyPound.FontSize = 15 * ratioW;
+            currencyPound.FontWeight = FontWeights.Bold;
+            currencyPound.TextAlignment = TextAlignment.Center;
+            currencyPound.Padding = new Thickness(0, 16, 0, 0);
+            currencyPound.Cursor = Cursors.Hand;
+
+            receivedLabel.Text = "ALINAN PARA";
+            receivedLabel.Foreground = new SolidColorBrush(Color.FromArgb(255, 104, 183, 255));
+            receivedLabel.FontSize = 15 * ratioW;
+
+            remainingLabel.Text = "KALAN TUTAR";
+            remainingLabel.Foreground = new SolidColorBrush(Color.FromArgb(255, 104, 183, 255));
+            remainingLabel.FontSize = 15 * ratioW;
+
+            paymentChangeLabel.Text = "PARA ÜSTÜ";
+            paymentChangeLabel.Foreground = new SolidColorBrush(Color.FromArgb(255, 104, 183, 255));
+            paymentChangeLabel.FontSize = 18 * ratioW;
+            paymentChangeLabel.FontWeight = FontWeights.Bold;
+            paymentChangeLabel.FontStretch = FontStretches.UltraExpanded;
+
 
             centerCanvas.Children.Add(backgroundImage);
             centerCanvas.Children.Add(headerIconImage);
             centerCanvas.Children.Add(headerText);
-            centerCanvas.Children.Add(totalBorder);
-            centerCanvas.Children.Add(totalTextHeader);
+            centerCanvas.Children.Add(separatorImage);
+            centerCanvas.Children.Add(separatorBotImage);
+            centerCanvas.Children.Add(totalTextLabel);
             centerCanvas.Children.Add(totalTextTL);
             centerCanvas.Children.Add(totalTextPound);
             centerCanvas.Children.Add(totalTextEuro);
@@ -1275,39 +1430,70 @@ namespace Barcode_Reader
             centerCanvas.Children.Add(euroIcon);
             centerCanvas.Children.Add(dollarIcon);
             centerCanvas.Children.Add(poundIcon);
+            centerCanvas.Children.Add(currencyBackgroundImage);
+            centerCanvas.Children.Add(currencyTl);
+            centerCanvas.Children.Add(currencyDollar);
+            centerCanvas.Children.Add(currencyEuro);
+            centerCanvas.Children.Add(currencyPound);
+            centerCanvas.Children.Add(paymentReceivedCanvas);
+            centerCanvas.Children.Add(paymentBottomLeftCanvas);
+            centerCanvas.Children.Add(paymentBottomRightCanvas);
+            paymentReceivedCanvas.Children.Add(receivedLabel);
+            paymentBottomLeftCanvas.Children.Add(remainingLabel);
+            paymentBottomLeftCanvas.Children.Add(paymentChangeLabel);
 
-
-
-            setWidthAndHeight(centerCanvas, 870, 490);
+            setWidthAndHeight(centerCanvas, 934, 558);
+            setWidthAndHeight(backgroundCanvas, 1920, 1080);
             setWidthAndHeight(headerIconImage, 35, 35);
             setWidthAndHeight(containerCanvas, 1920, 1080);
-            setWidthAndHeight(backgroundImage, 870, 490);
-            setWidthAndHeight(totalTextTL, 200, 50);
-            setWidthAndHeight(totalTextPound, 125, 50);
-            setWidthAndHeight(totalTextEuro, 125, 50);
-            setWidthAndHeight(totalTextDolar, 125, 50);
-            setWidthAndHeight(tlIcon, 35, 35);
+            setWidthAndHeight(backgroundImage, 934, 558);
+            setWidthAndHeight(separatorImage, 420, 1);
+            setWidthAndHeight(totalTextTL, 150, 45);
+            setWidthAndHeight(totalTextPound, 75, 25);
+            setWidthAndHeight(totalTextEuro, 75, 25);
+            setWidthAndHeight(totalTextDolar, 75, 25);
+            setWidthAndHeight(tlIcon, 30, 30);
             setWidthAndHeight(euroIcon, 20, 20);
             setWidthAndHeight(dollarIcon, 20, 20);
             setWidthAndHeight(poundIcon, 20, 20);
-            setWidthAndHeight(backgroundCanvas, 1920, 1080);
+            setWidthAndHeight(separatorBotImage, 420, 1);
+            setWidthAndHeight(currencyBackgroundImage, 420, 36);
+            setWidthAndHeight(currencyTl, 95, 56);
+            setWidthAndHeight(currencyDollar, 95, 56);
+            setWidthAndHeight(currencyEuro, 95, 56);
+            setWidthAndHeight(currencyPound, 95, 56);
+            setWidthAndHeight(paymentReceivedCanvas, 420, 58);
+            setWidthAndHeight(paymentBottomLeftCanvas, 242, 126);
+            setWidthAndHeight(paymentBottomRightCanvas, 178, 126);
 
-            setTopLeftPosition(centerCanvas, (1920-870)/2, (1080 - 500) / 2);
-            setTopLeftPosition(headerIconImage, 40, 30);
+            setTopLeftPosition(centerCanvas, (1920 - 934) / 2, (1080 - 558) / 2);
+            setTopLeftPosition(headerIconImage, 56, 52);
             setTopLeftPosition(backgroundImage, 0, 0);
-            setTopLeftPosition(headerText, 150, 25);
-            setTopLeftPosition(totalTextHeader, 50, 110);
-            setTopLeftPosition(totalTextTL, 200, 105);
-            setTopLeftPosition(totalTextPound, 0, 150);
-            setTopLeftPosition(totalTextEuro, 150, 150);
-            setTopLeftPosition(totalTextDolar, 300, 150);
-            setTopLeftPosition(tlIcon, 410,110);
-            setTopLeftPosition(poundIcon, 125, 158);
-            setTopLeftPosition(euroIcon, 280, 158);
-            setTopLeftPosition(dollarIcon, 425, 158);
+            setTopLeftPosition(headerText, 157, 49);
+            setTopLeftPosition(separatorImage, 37, 123);
+            setTopLeftPosition(totalTextLabel, 63, 138);
+            setTopLeftPosition(totalTextTL, 239, 130);
+            setTopLeftPosition(totalTextPound, 104, 175);
+            setTopLeftPosition(totalTextEuro, 212, 175);
+            setTopLeftPosition(totalTextDolar, 320, 175);
+            setTopLeftPosition(tlIcon, 400, 134);
+            setTopLeftPosition(poundIcon, 189, 178);
+            setTopLeftPosition(euroIcon, 296, 178);
+            setTopLeftPosition(dollarIcon, 404, 178);
+            setTopLeftPosition(separatorBotImage, 37, 213);
+            setTopLeftPosition(currencyBackgroundImage, 37, 253);
+            setTopLeftPosition(currencyTl, 36, 241);
+            setTopLeftPosition(currencyDollar, 145, 241);
+            setTopLeftPosition(currencyEuro, 253, 241);
+            setTopLeftPosition(currencyPound, 362, 241);
+            setTopLeftPosition(paymentReceivedCanvas, 37, 298);
+            setTopLeftPosition(paymentBottomLeftCanvas, 37, 395);
+            setTopLeftPosition(paymentBottomRightCanvas, 279, 395);
+            setTopLeftPosition(receivedLabel, 27, 19);
+            setTopLeftPosition(remainingLabel, 27, 23);
+            setTopLeftPosition(paymentChangeLabel, 27, 70);
 
             backgroundCanvas.MouseUp += backGroundCanvas_MouseUp;
-
 
             return containerCanvas;
         }
